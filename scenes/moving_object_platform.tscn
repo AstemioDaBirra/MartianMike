@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsvin0df6tuw0"]
+
+[ext_resource type="Script" path="res://scripts/moving_object.gd" id="1_dpxqd"]
+[ext_resource type="PackedScene" uid="uid://1kldgejtkkcc" path="res://scenes/platform.tscn" id="2_b7ifn"]
+
+[sub_resource type="Curve2D" id="Curve2D_41iu4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -83)
+}
+point_count = 2
+
+[node name="moving_object_platform" type="Path2D" node_paths=PackedStringArray("object")]
+z_index = -1
+curve = SubResource("Curve2D_41iu4")
+script = ExtResource("1_dpxqd")
+object = NodePath("PathFollow2D/Platform")
+object_color = 0
+loops = true
+move_speed = 0.5
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="Platform" parent="PathFollow2D" instance=ExtResource("2_b7ifn")]

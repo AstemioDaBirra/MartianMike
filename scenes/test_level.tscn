@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2r7mwikhrcmo"]
+
+[ext_resource type="PackedScene" uid="uid://d1qhyuuem56ea" path="res://scenes/bg.tscn" id="1_j1yr1"]
+[ext_resource type="PackedScene" uid="uid://dfhu6yw23c5wb" path="res://scenes/deathzone.tscn" id="2_ix52i"]
+[ext_resource type="PackedScene" uid="uid://dtu1713sgtyo2" path="res://scenes/exit.tscn" id="3_mo1tw"]
+[ext_resource type="PackedScene" uid="uid://cswtgmkcn4ch1" path="res://scenes/player.tscn" id="4_xcdue"]
+[ext_resource type="PackedScene" uid="uid://c8le740jk0bkp" path="res://scenes/start.tscn" id="5_5y8qm"]
+[ext_resource type="PackedScene" uid="uid://87t7hrydkxek" path="res://scenes/tile_map.tscn" id="6_j5d2c"]
+
+[node name="Test_level" type="Node2D"]
+
+[node name="BG" parent="." instance=ExtResource("1_j1yr1")]
+
+[node name="Deathzone" parent="." instance=ExtResource("2_ix52i")]
+
+[node name="Exit" parent="." instance=ExtResource("3_mo1tw")]
+
+[node name="Start" parent="." instance=ExtResource("5_5y8qm")]
+
+[node name="TileMap" parent="." instance=ExtResource("6_j5d2c")]
+
+[node name="Player" parent="." instance=ExtResource("4_xcdue")]

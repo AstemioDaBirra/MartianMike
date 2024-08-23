@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqynlc2hehpw3"]
+
+[ext_resource type="Script" path="res://scripts/moving_object.gd" id="1_s72eo"]
+[ext_resource type="PackedScene" uid="uid://dkld73wfihrfs" path="res://scenes/trap_saw.tscn" id="2_nk515"]
+
+[sub_resource type="Curve2D" id="Curve2D_41iu4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0)
+}
+point_count = 2
+
+[node name="moving_trap_saw" type="Path2D" node_paths=PackedStringArray("object")]
+curve = SubResource("Curve2D_41iu4")
+script = ExtResource("1_s72eo")
+object = NodePath("PathFollow2D/trap_saw")
+loops = true
+move_speed = 0.5
+time_before_activation = 0.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="trap_saw" parent="PathFollow2D" instance=ExtResource("2_nk515")]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm0pl8b436bw0"]
+
+[ext_resource type="Script" path="res://scripts/moving_object.gd" id="1_0v0dc"]
+[ext_resource type="PackedScene" uid="uid://dxcjw5tahhdqt" path="res://scenes/door.tscn" id="2_jue8f"]
+
+[sub_resource type="Curve2D" id="Curve2D_41iu4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 345, 104, 0, 0, 0, 0, 345, 64)
+}
+point_count = 2
+
+[node name="moving_object_door" type="Path2D" node_paths=PackedStringArray("object")]
+z_index = -1
+curve = SubResource("Curve2D_41iu4")
+script = ExtResource("1_0v0dc")
+object = NodePath("PathFollow2D/Door")
+object_color = 0
+move_speed = 2.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(345, 104)
+rotates = false
+loop = false
+
+[node name="Door" parent="PathFollow2D" instance=ExtResource("2_jue8f")]
